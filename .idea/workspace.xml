@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56923f5-ce9d-4682-9033-d273d943e428" name="Changes" comment="Been working on this for a minute but having trouble with the save button.">
+    <list default="true" id="d56923f5-ce9d-4682-9033-d273d943e428" name="Changes" comment="Got it to replace an object but only from the first one in the table..">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/MainScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/MainScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/ModifyPart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ModifyPart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/MainScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MainScreen.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +104,7 @@
       <workItem from="1659741155903" duration="4272000" />
       <workItem from="1659757088440" duration="1828000" />
       <workItem from="1659759063081" duration="848000" />
-      <workItem from="1659812083670" duration="7396000" />
+      <workItem from="1659812083670" duration="11648000" />
     </task>
     <task id="LOCAL-00001" summary="Been working on this for a minute but having trouble with the save button.">
       <created>1659817798427</created>
@@ -111,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659817798427</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Got it to replace an object but only from the first one in the table..">
+      <created>1659819840786</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1659819840786</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,7 +139,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Been working on this for a minute but having trouble with the save button." />
-    <option name="LAST_COMMIT_MESSAGE" value="Been working on this for a minute but having trouble with the save button." />
+    <MESSAGE value="Got it to replace an object but only from the first one in the table.." />
+    <option name="LAST_COMMIT_MESSAGE" value="Got it to replace an object but only from the first one in the table.." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

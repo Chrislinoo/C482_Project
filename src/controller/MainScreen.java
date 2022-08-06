@@ -8,10 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.InHouse;
@@ -21,6 +18,7 @@ import model.Product;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class MainScreen implements Initializable {
@@ -100,7 +98,15 @@ public class MainScreen implements Initializable {
 
     @FXML
     void onActionDelPart(ActionEvent event) {
-        System.out.println("Delete Button Clicked!");
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "This will delete selected part, do you wish to continue?");
+        alert.setTitle("Delete");
+        Optional<ButtonType> result = alert.showAndWait();
+
+        if (result.isPresent() && result.get() == ButtonType.OK){
+            Part onePart;
+            onePart = partsTableView.getSelectionModel().getSelectedItem();
+            Inventory.deletePart(onePart);
+        }
     }
 
     @FXML
@@ -172,7 +178,19 @@ public class MainScreen implements Initializable {
 
 
 
+
     }
 
+    public void onActionDeleteProduct(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "This will delete selected product, do you wish to continue?");
+        alert.setTitle("Delete");
+        Optional<ButtonType> result = alert.showAndWait();
+
+        if (result.isPresent() && result.get() == ButtonType.OK){
+            Product oneProduct;
+            oneProduct = productsTableView.getSelectionModel().getSelectedItem();
+            Inventory.deleteProduct(oneProduct);
+        }
+    }
 }
 

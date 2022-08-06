@@ -108,7 +108,7 @@ public class ModifyPart {
 
     }
 
-    public void partTransfer(Part part, int index){//Not Working Correctly
+    public void partTransfer(int index, Part part){//Not Working Correctly
          selectedPart = part;
          selectedIndex = index;
 
@@ -124,7 +124,8 @@ public class ModifyPart {
             this.minTxtField.setText(String.valueOf(renew.getMin()));
             this.maxTxtField.setText(String.valueOf(renew.getMax()));
             this.hybridTxtField.setText(String.valueOf(renew.getMachineId()));
-            Inventory.updatePart(selectedIndex, selectedPart);
+            Inventory.updatePart(selectedIndex, renew);
+            //Inventory.updatePart(selectedIndex, selectedPart);
 
 
 
@@ -141,7 +142,8 @@ public class ModifyPart {
             this.minTxtField.setText(String.valueOf(renew.getMin()));
             this.maxTxtField.setText(String.valueOf(renew.getMax()));
             this.hybridTxtField.setText(renew.getCompanyName());
-            Inventory.updatePart(selectedIndex, selectedPart);
+            Inventory.updatePart(selectedIndex, renew);
+            //Inventory.updatePart(selectedIndex, selectedPart);
         }
     }
 
@@ -174,27 +176,6 @@ public class ModifyPart {
             Inventory.getAllParts().set(selectedIndex,outsourced);
         }
 
-
-        /*int id = Integer.parseInt(this.idTxtField.getText());
-        String name = this.nameTxtField.getText();
-        double price = Double.parseDouble(this.priceTxtField.getText());
-        int stock = Integer.parseInt(this.priceTxtField.getText());
-        int min = Integer.parseInt(this.minTxtField.getText());
-        int max = Integer.parseInt(this.maxTxtField.getText());
-
-
-        if (inHouseRadioBtn.isSelected()) {
-            int hybrid = Integer.parseInt(this.hybridTxtField.getText());
-            InHouse inHouse = new InHouse( id,  name,  price,  stock,  min,  max,  hybrid);
-            Inventory.getAllParts().set(selectedIndex, selectedPart);
-            //Inventory.updatePart(selectedIndex,selectedPart);
-        }
-
-        if (outSourcedRadioBtn.isSelected()) {
-            String hybrid2 = this.hybridTxtField.getText();
-            Outsourced outsourced = new Outsourced(id, name, price, stock, min, max, hybrid2);
-            Inventory.getAllParts().set(selectedIndex, selectedPart);
-        }*/
 
 
         stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
