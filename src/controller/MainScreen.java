@@ -27,6 +27,9 @@ public class MainScreen implements Initializable {
     Stage stage;
     Parent scene;
 
+    ObservableList parts;
+    ObservableList products;
+
     @FXML
     private Button menuExitBtn;
 
@@ -118,13 +121,31 @@ public class MainScreen implements Initializable {
 
     @FXML
     void onActionModifyPart(ActionEvent event) throws IOException {
-        stage = (Stage) ((Button)event.getSource()).getScene().getWindow();
+        try {
+            FXMLLoader loader = new FXMLLoader();
 
-        scene = FXMLLoader.load(getClass().getResource("/view/ModifyPart.fxml"));
+            loader.setLocation(getClass().getResource("/view/ModifyPart.fxml"));
 
-        stage.setScene(new Scene(scene));
+            loader.load();
 
-        stage.show();
+            ModifyPart modifyPart = loader.getController();
+            modifyPart.partTransfer(partsTableView.getSelectionModel().getSelectedIndex(),partsTableView.getSelectionModel().getSelectedItem());
+            stage = (Stage) ((Button)event.getSource()).getScene().getWindow();
+            Parent scene = loader.getRoot();
+            stage.setScene(new Scene(scene));
+            stage.show();
+
+        }
+        catch (NullPointerException e){
+
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error!");
+            alert.setContentText("Make a part selection first!");
+            alert.show();
+
+        }
+
+
     }
 
     @FXML
@@ -187,9 +208,25 @@ public class MainScreen implements Initializable {
         Optional<ButtonType> result = alert.showAndWait();
 
         if (result.isPresent() && result.get() == ButtonType.OK){
-            Product oneProduct;
-            oneProduct = productsTableView.getSelectionModel().getSelectedItem();
-            Inventory.deleteProduct(oneProduct);
+            try {
+                Product product = productsTableView.getSelectionModel().getSelectedItem();
+                if (product.getAllAssociatedParts().isEmpty()){
+                    Inventory.deleteProduct(product);
+                }
+                else {
+                    alert = new Alert(Alert.AlertType.ERROR, "Product has associated parts still attached. /n Please remove the parts belonging to the selected product before deletion.");
+                    alert.showAndWait();
+                }
+            }
+            catch (UnsupportedOperationException e){
+                alert.setTitle("Deletion Error");
+                alert.setHeaderText("Product Was NOT Deleted");
+                alert.setContentText("No Product Selected");
+                alert.showAndWait();
+            }
+
+
+
         }
     }
 }

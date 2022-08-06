@@ -125,7 +125,6 @@ public class ModifyPart {
             this.maxTxtField.setText(String.valueOf(renew.getMax()));
             this.hybridTxtField.setText(String.valueOf(renew.getMachineId()));
             Inventory.updatePart(selectedIndex, renew);
-            //Inventory.updatePart(selectedIndex, selectedPart);
 
 
 
@@ -143,7 +142,6 @@ public class ModifyPart {
             this.maxTxtField.setText(String.valueOf(renew.getMax()));
             this.hybridTxtField.setText(renew.getCompanyName());
             Inventory.updatePart(selectedIndex, renew);
-            //Inventory.updatePart(selectedIndex, selectedPart);
         }
     }
 
