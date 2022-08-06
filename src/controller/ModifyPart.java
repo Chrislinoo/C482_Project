@@ -108,10 +108,13 @@ public class ModifyPart {
 
     }
 
-    public void partTransfer(int index, Part part){//Not Working Correctly
-         selectedPart = part; selectedIndex = index;
+    public void partTransfer(Part part, int index){//Not Working Correctly
+         selectedPart = part;
+         selectedIndex = index;
+
 
         if (part instanceof InHouse){//Not Working Correctly
+
             InHouse renew = (InHouse) part;
             inHouseRadioBtn.setSelected(true);
             hybridLbl.setText("Machine ID");
@@ -121,13 +124,14 @@ public class ModifyPart {
             this.minTxtField.setText(String.valueOf(renew.getMin()));
             this.maxTxtField.setText(String.valueOf(renew.getMax()));
             this.hybridTxtField.setText(String.valueOf(renew.getMachineId()));
-            Inventory.updatePart(selectedIndex, renew);
+            Inventory.updatePart(selectedIndex, selectedPart);
 
 
 
         }
 
         if (part instanceof Outsourced){//Not Working Correctly
+
             Outsourced renew = (Outsourced) part;
             inHouseRadioBtn.setSelected(true);
             hybridLbl.setText("Machine ID");
@@ -137,7 +141,7 @@ public class ModifyPart {
             this.minTxtField.setText(String.valueOf(renew.getMin()));
             this.maxTxtField.setText(String.valueOf(renew.getMax()));
             this.hybridTxtField.setText(renew.getCompanyName());
-            Inventory.updatePart(selectedIndex, renew);
+            Inventory.updatePart(selectedIndex, selectedPart);
         }
     }
 
@@ -149,8 +153,9 @@ public class ModifyPart {
 
     @FXML
     void onActionModPartSave(ActionEvent event) throws IOException {//Not Working Correctly
+        Inventory.updatePart(selectedIndex, selectedPart);
 
-        int id = selectedPart.getId();
+        int id = Integer.parseInt(this.idTxtField.getText());
         String name = nameTxtField.getText();
         double price = Double.parseDouble(priceTxtField.getText());
         int inventory = Integer.parseInt(invTxtField.getText());

@@ -4,30 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56923f5-ce9d-4682-9033-d273d943e428" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/C482_InventorySystem.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/AddPart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/AddProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/MainScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/ModifyPart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/ModifyProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/InHouse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Inventory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Outsourced.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Part.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/AddPart.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/AddProduct.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/MainScreen.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/ModifyPart.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/ModifyProduct.fxml" afterDir="false" />
+    <list default="true" id="d56923f5-ce9d-4682-9033-d273d943e428" name="Changes" comment="Been working on this for a minute but having trouble with the save button.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ModifyPart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ModifyPart.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,8 +102,16 @@
       <workItem from="1659741155903" duration="4272000" />
       <workItem from="1659757088440" duration="1828000" />
       <workItem from="1659759063081" duration="848000" />
-      <workItem from="1659812083670" duration="5288000" />
+      <workItem from="1659812083670" duration="7396000" />
     </task>
+    <task id="LOCAL-00001" summary="Been working on this for a minute but having trouble with the save button.">
+      <created>1659817798427</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1659817798427</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,6 +127,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Been working on this for a minute but having trouble with the save button." />
+    <option name="LAST_COMMIT_MESSAGE" value="Been working on this for a minute but having trouble with the save button." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
