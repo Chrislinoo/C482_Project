@@ -108,12 +108,12 @@ public class ModifyPart {
 
     }
 
-    public void partTransfer(int index, Part part){//Not Working Correctly
+    public void partTransfer(int index, Part part){
          selectedPart = part;
          selectedIndex = index;
 
 
-        if (part instanceof InHouse){//Not Working Correctly
+        if (part instanceof InHouse){
 
             InHouse renew = (InHouse) part;
             inHouseRadioBtn.setSelected(true);
@@ -130,7 +130,7 @@ public class ModifyPart {
 
         }
 
-        if (part instanceof Outsourced){//Not Working Correctly
+        if (part instanceof Outsourced){
 
             Outsourced renew = (Outsourced) part;
             inHouseRadioBtn.setSelected(true);
@@ -152,37 +152,57 @@ public class ModifyPart {
 
 
     @FXML
-    void onActionModPartSave(ActionEvent event) throws IOException {//Not Working Correctly
-        Inventory.updatePart(selectedIndex, selectedPart);
+    void onActionModPartSave(ActionEvent event) throws IOException {
 
-        int id = Integer.parseInt(this.idTxtField.getText());
-        String name = nameTxtField.getText();
-        double price = Double.parseDouble(priceTxtField.getText());
-        int inventory = Integer.parseInt(invTxtField.getText());
-        int max = Integer.parseInt(maxTxtField.getText());
-        int min = Integer.parseInt(minTxtField.getText());
+        try {
+            Inventory.updatePart(selectedIndex, selectedPart);
 
-        if (inHouseRadioBtn.isSelected()){
-            int machId = Integer.parseInt(hybridTxtField.getText());
-            InHouse inhouse = new InHouse(id, name, price, inventory, min, max, machId);
-            Inventory.getAllParts().set(selectedIndex, inhouse);
+            int id = Integer.parseInt(this.idTxtField.getText());
+            String name = nameTxtField.getText();
+            double price = Double.parseDouble(priceTxtField.getText());
+            int inventory = Integer.parseInt(invTxtField.getText());
+            int max = Integer.parseInt(maxTxtField.getText());
+            int min = Integer.parseInt(minTxtField.getText());
+
+
+            if (min > max){
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Max must be greater than min!");
+                alert.showAndWait();
+                return;
+            } else if (inventory < min || max < inventory) {
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Inventory should be less than max & greater than min.");
+                alert.showAndWait();
+                return;
+            }
+
+            if (inHouseRadioBtn.isSelected()) {
+                int machId = Integer.parseInt(hybridTxtField.getText());
+                InHouse inhouse = new InHouse(id, name, price, inventory, min, max, machId);
+                Inventory.getAllParts().set(selectedIndex, inhouse);
+            }
+
+            if (outSourcedRadioBtn.isSelected()) {
+                String compName = (hybridTxtField.getText());
+                Outsourced outsourced = new Outsourced(id, name, price, inventory, min, max, compName);
+                Inventory.getAllParts().set(selectedIndex, outsourced);
+            }
+
+
+            stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
+
+            scene = FXMLLoader.load(getClass().getResource("/view/MainScreen.fxml"));
+
+            stage.setScene(new Scene(scene));
+
+            stage.show();
         }
-
-        if (outSourcedRadioBtn.isSelected()){
-            String compName = (hybridTxtField.getText());
-            Outsourced outsourced = new Outsourced(id, name, price, inventory, min, max, compName);
-            Inventory.getAllParts().set(selectedIndex,outsourced);
+        catch (NumberFormatException e){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Error");
+            alert.setContentText("Check input values.");
+            alert.showAndWait();
+            return;
         }
-
-
-
-        stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
-
-        scene = FXMLLoader.load(getClass().getResource("/view/MainScreen.fxml"));
-
-        stage.setScene(new Scene(scene));
-
-        stage.show();
 
     }
 

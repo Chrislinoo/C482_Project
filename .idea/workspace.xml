@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d56923f5-ce9d-4682-9033-d273d943e428" name="Changes" comment="ISSUES:&#10;-My modify parts button isnt acting the way i want it to.&#10;&#10;&#10;RESOLVED/ACCOMPLISHED:&#10;-Got my parts and products button to delete and accurately display the delete alerts.">
+    <list default="true" id="d56923f5-ce9d-4682-9033-d273d943e428" name="Changes" comment="ISSUES:&#10;-Now that my modify button works I cannot get the alerts to show up if I dont select a part.&#10;&#10;&#10;RESOLVED/ACCOMPLISHED:&#10;-Got the alert for deleting without setting a part pop up.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/MainScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/MainScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/ModifyPart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ModifyPart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +104,7 @@
       <workItem from="1659741155903" duration="4272000" />
       <workItem from="1659757088440" duration="1828000" />
       <workItem from="1659759063081" duration="848000" />
-      <workItem from="1659812083670" duration="15769000" />
+      <workItem from="1659812083670" duration="17531000" />
     </task>
     <task id="LOCAL-00001" summary="Been working on this for a minute but having trouble with the save button.">
       <created>1659817798427</created>
@@ -126,7 +127,21 @@
       <option name="project" value="LOCAL" />
       <updated>1659824538471</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="ISSUES:&#10;-Now that my modify button works I cannot get the alerts to show up if I dont select a part.&#10;&#10;&#10;RESOLVED/ACCOMPLISHED:&#10;-Modify parts now work , after 6 hours :)....made the delete parts button work as well.">
+      <created>1659830147413</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1659830147413</updated>
+    </task>
+    <task id="LOCAL-00005" summary="ISSUES:&#10;-Now that my modify button works I cannot get the alerts to show up if I dont select a part.&#10;&#10;&#10;RESOLVED/ACCOMPLISHED:&#10;-Got the alert for deleting without setting a part pop up.">
+      <created>1659830530571</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1659830530571</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,7 +162,9 @@
     <MESSAGE value="Been working on this for a minute but having trouble with the save button." />
     <MESSAGE value="Got it to replace an object but only from the first one in the table.." />
     <MESSAGE value="ISSUES:&#10;-My modify parts button isnt acting the way i want it to.&#10;&#10;&#10;RESOLVED/ACCOMPLISHED:&#10;-Got my parts and products button to delete and accurately display the delete alerts." />
-    <option name="LAST_COMMIT_MESSAGE" value="ISSUES:&#10;-My modify parts button isnt acting the way i want it to.&#10;&#10;&#10;RESOLVED/ACCOMPLISHED:&#10;-Got my parts and products button to delete and accurately display the delete alerts." />
+    <MESSAGE value="ISSUES:&#10;-Now that my modify button works I cannot get the alerts to show up if I dont select a part.&#10;&#10;&#10;RESOLVED/ACCOMPLISHED:&#10;-Modify parts now work , after 6 hours :)....made the delete parts button work as well." />
+    <MESSAGE value="ISSUES:&#10;-Now that my modify button works I cannot get the alerts to show up if I dont select a part.&#10;&#10;&#10;RESOLVED/ACCOMPLISHED:&#10;-Got the alert for deleting without setting a part pop up." />
+    <option name="LAST_COMMIT_MESSAGE" value="ISSUES:&#10;-Now that my modify button works I cannot get the alerts to show up if I dont select a part.&#10;&#10;&#10;RESOLVED/ACCOMPLISHED:&#10;-Got the alert for deleting without setting a part pop up." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

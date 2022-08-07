@@ -39,7 +39,7 @@ public class Main extends Application {
         Product PC = new Product(1, "BlockDragon", 1089.00, 2, 1, 5 );
         Inventory.addProduct(PC);
 
-        Product PC2 = new Product(2, "MiniCat", 1421.00, 1, 1, 5);
+        Product PC2 = new Product(2, "MiniCat", 1421.00, 3, 1, 5);
         Inventory.addProduct(PC2);
 
 

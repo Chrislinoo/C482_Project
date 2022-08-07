@@ -131,9 +131,7 @@ public class MainScreen implements Initializable {
     void onActionModifyPart(ActionEvent event) throws IOException {
         try {
             FXMLLoader loader = new FXMLLoader();
-
             loader.setLocation(getClass().getResource("/view/ModifyPart.fxml"));
-
             loader.load();
 
             ModifyPart modifyPart = loader.getController();
