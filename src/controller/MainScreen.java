@@ -101,14 +101,22 @@ public class MainScreen implements Initializable {
 
     @FXML
     void onActionDelPart(ActionEvent event) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "This will delete selected part, do you wish to continue?");
-        alert.setTitle("Delete");
-        Optional<ButtonType> result = alert.showAndWait();
+        try {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "This will delete selected part, do you wish to continue?");
+            alert.setTitle("Delete");
+            Optional<ButtonType> result = alert.showAndWait();
 
-        if (result.isPresent() && result.get() == ButtonType.OK){
-            Part onePart;
-            onePart = partsTableView.getSelectionModel().getSelectedItem();
-            Inventory.deletePart(onePart);
+            if (result.isPresent() && result.get() == ButtonType.OK) {
+                Part onePart;
+                onePart = partsTableView.getSelectionModel().getSelectedItem();
+                Inventory.deletePart(onePart);
+            }
+        }
+        catch ( NullPointerException e){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setContentText("Select a Part to delete first.");
+            alert.show();
         }
     }
 
