@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d56923f5-ce9d-4682-9033-d273d943e428" name="Changes" comment="ISSUES:&#10;-Now that my modify button works I cannot get the alerts to show up if I dont select a part.&#10;&#10;&#10;RESOLVED/ACCOMPLISHED:&#10;-Got the alert for deleting without setting a part pop up.&#10;-Got the modifying input values alerts working.">
+      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/AddPart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AddPart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/AddProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AddProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/MainScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/MainScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/C482_InventorySystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/C482_InventorySystem.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Inventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/AddProduct.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/AddProduct.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/MainScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MainScreen.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +27,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -45,23 +48,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Christopher/IdeaProjects/CPHApplicationMain&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pathVariables&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "dart.analysis.tool.window.visible": "false",
+    "last_opened_file_path": "C:/Users/frank/Desktop/openjfx-18.0.2_windows-x64_bin-sdk/javafx-sdk-18.0.2/lib",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pathVariables",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="model" />
@@ -116,6 +121,7 @@
       <workItem from="1659832388673" duration="202000" />
       <workItem from="1659844742408" duration="4663000" />
       <workItem from="1659904313785" duration="13936000" />
+      <workItem from="1659986623224" duration="1528000" />
     </task>
     <task id="LOCAL-00001" summary="Been working on this for a minute but having trouble with the save button.">
       <created>1659817798427</created>

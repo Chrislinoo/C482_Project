@@ -65,10 +65,20 @@ public class Inventory {
         return PartName;
     }
 
+    /**
+     * In the product lookup search in the text box it'll check the name and id of the product.
+     *
+     * @param productName The textfield string being passed.
+     * @return A list of Product that satisfies the search.
+     */
     public static ObservableList<Product> lookupProduct(String productName){
         ObservableList<Product> ProductName = FXCollections.observableArrayList();
         for (Product product : allProducts){
             if (product.getName().contains(productName)){
+                ProductName.add(product);
+            }
+
+            if(product.getId() == Integer.parseInt(productName)){
                 ProductName.add(product);
             }
         }
