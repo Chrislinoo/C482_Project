@@ -108,35 +108,52 @@ public class AddPart {
 
     @FXML
     void onActionSavePartBtn(ActionEvent event) throws IOException {
+        try {
+            int id = Integer.parseInt(this.idTxtField.getText());
+            String name = this.nameTxtField.getText();
+            double price = Double.parseDouble(this.priceTxtField.getText());
+            int stock = Integer.parseInt(this.priceTxtField.getText());
+            int min = Integer.parseInt(this.minTxtField.getText());
+            int max = Integer.parseInt(this.maxTxtField.getText());
 
-        int id = Integer.parseInt(this.idTxtField.getText());
-        String name = this.nameTxtField.getText();
-        double price = Double.parseDouble(this.priceTxtField.getText());
-        int stock = Integer.parseInt(this.priceTxtField.getText());
-        int min = Integer.parseInt(this.minTxtField.getText());
-        int max = Integer.parseInt(this.maxTxtField.getText());
+            if (min > max){
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Max must be greater than min!");
+                alert.showAndWait();
+                return;
+            } else if (stock < min || max < stock) {
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Inventory should be less than max & greater than min.");
+                alert.showAndWait();
+                return;
+            }
 
 
-        if (inHouseRadio.isSelected()) {
-            int hybrid = Integer.parseInt(this.hybridTxtField.getText());
-            Inventory.addPart(new InHouse(id, name,  price,  stock,  min,  max, hybrid));
+            if (inHouseRadio.isSelected()) {
+                int hybrid = Integer.parseInt(this.hybridTxtField.getText());
+                Inventory.addPart(new InHouse(id, name, price, stock, min, max, hybrid));
+            }
+
+            if (outSourcedRadio.isSelected()) {
+                String hybrid2 = this.hybridTxtField.getText();
+                Inventory.addPart(new Outsourced(id, name, price, stock, min, max, hybrid2));
+            }
+
+
+            stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
+
+            scene = FXMLLoader.load(getClass().getResource("/view/MainScreen.fxml"));
+
+            stage.setScene(new Scene(scene));
+
+            stage.show();
+
         }
-
-        if (outSourcedRadio.isSelected()) {
-            String hybrid2 = this.hybridTxtField.getText();
-            Inventory.addPart(new Outsourced(id, name, price, stock, min, max, hybrid2));
+        catch (NumberFormatException e){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Error");
+            alert.setContentText("Check input values.");
+            alert.showAndWait();
+            return;
         }
-
-
-
-
-        stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
-
-        scene = FXMLLoader.load(getClass().getResource("/view/MainScreen.fxml"));
-
-        stage.setScene(new Scene(scene));
-
-        stage.show();
 
 
     }

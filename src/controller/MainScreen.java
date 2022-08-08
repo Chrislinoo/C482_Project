@@ -209,30 +209,60 @@ public class MainScreen implements Initializable {
     }
 
     public void onActionDeleteProduct(ActionEvent event) {
+        /*Product selectedProduct = productsTableView.getSelectionModel().getSelectedItem();
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "This will delete selected product, do you wish to continue?");
         alert.setTitle("Delete");
         Optional<ButtonType> result = alert.showAndWait();
 
-        if (result.isPresent() && result.get() == ButtonType.OK){
-            try {
-                Product product = productsTableView.getSelectionModel().getSelectedItem();
-                if (product.getAllAssociatedParts().isEmpty()){
-                    Inventory.deleteProduct(product);
-                }
-                else {
-                    alert = new Alert(Alert.AlertType.ERROR, "Product has associated parts still attached. /n Please remove the parts belonging to the selected product before deletion.");
-                    alert.showAndWait();
-                }
+        if (result.isPresent() & result.get() == ButtonType.OK){
+            Product deletedProduct = productsTableView.getSelectionModel().getSelectedItem();
+            if (deletedProduct.getAllAssociatedParts().size() > 0){
+                Alert invalidDel = new Alert(Alert.AlertType.ERROR);
+                invalidDel.setTitle("Error");
+                invalidDel.setContentText("Clear Associated Parts Before Deleting Desired Product.");
+                invalidDel.showAndWait();
+                return;
             }
-            catch (UnsupportedOperationException e){
-                alert.setTitle("Deletion Error");
-                alert.setHeaderText("Product Was NOT Deleted");
-                alert.setContentText("No Product Selected");
-                alert.showAndWait();
+            Inventory.deleteProduct(deletedProduct);
+        }*/
+    }
+
+    public void onActionMSPartSearch(ActionEvent event) {//Not Searching Up by ID
+        String textSearch = searchPartText.getText();
+        ObservableList<Part> output = Inventory.lookupPart(textSearch);
+
+        try {
+            while(output.size() == 0 ){
+                int partId = Integer.parseInt(textSearch);
+                output.add(Inventory.lookupPart(partId));
             }
+            partsTableView.setItems(output);
+        }
+        catch (NumberFormatException e){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setContentText("Nonexistent Part.");
+            alert.showAndWait();
+        }
+    }
 
 
+    public void onActionMSProductSearch(ActionEvent event) {
+        String productSearch = searchProductText.getText();
+        ObservableList<Product> outcome = Inventory.lookupProduct(productSearch);
 
+        try {
+            while(outcome.size() == 0){
+                int productId = Integer.parseInt(productSearch);
+                outcome.add(Inventory.lookupProduct(productId));
+            }
+            productsTableView.setItems(outcome);
+        }
+        catch (NumberFormatException e){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setContentText("Nonexistent Product.");
+            alert.showAndWait();
         }
     }
 }

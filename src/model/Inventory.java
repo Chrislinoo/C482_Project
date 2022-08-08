@@ -77,17 +77,18 @@ public class Inventory {
 
     //Update Methods
 
-    public static void updatePart(int index, Part selectedPart){//Not Working Correctly
+    public static void updatePart(int index, Part selectedPart){
         allParts.set(index, selectedPart);
     }
 
 
 
     public static void updateProduct(int index, Product selectedProduct){
+        allProducts.set(index, selectedProduct);
 
     }
 
-    public static boolean deletePart(Part selectedPart){//May or may not work...
+    public static boolean deletePart(Part selectedPart){
 
         for (Part part : allParts){
             if (part.getId() == selectedPart.getId()){

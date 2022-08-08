@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddProduct">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddProduct">
    <children>
       <GridPane layoutX="35.0" layoutY="213.0" prefHeight="165.0" prefWidth="242.0">
         <columnConstraints>
@@ -72,15 +65,15 @@
       <TableView fx:id="tableViewAssoPart" layoutX="400.0" layoutY="321.0" prefHeight="200.0" prefWidth="380.0">
          <columns>
             <TableColumn fx:id="bottomCol1" text="Part ID" />
-            <TableColumn fx:id="BottomCol2" text="Part Name" />
-            <TableColumn fx:id="BottomCol3" prefWidth="95.0" text="Inventory Level" />
+            <TableColumn fx:id="bottomCol2" text="Part Name" />
+            <TableColumn fx:id="bottomCol3" prefWidth="95.0" text="Inventory Level" />
             <TableColumn fx:id="BottomCol4" prefWidth="125.0" text="Price/Cost per Unit" />
          </columns>
       </TableView>
-      <TextField fx:id="searchTextField" layoutX="618.0" layoutY="34.0" prefHeight="25.0" prefWidth="162.0" promptText="Search by Part ID or Name" />
-      <Button fx:id="addProductBtn" layoutX="728.0" layoutY="275.0" mnemonicParsing="false" text="Add" />
+      <TextField fx:id="searchTextField" layoutX="618.0" layoutY="34.0" onAction="#onActionSearchTxtField" prefHeight="25.0" prefWidth="162.0" promptText="Search by Part ID or Name" />
+      <Button fx:id="addProductBtn" layoutX="728.0" layoutY="275.0" mnemonicParsing="false" onAction="#onActionAddPartBtn" text="Add" />
       <Button fx:id="cancelProductBtn" layoutX="728.0" layoutY="561.0" mnemonicParsing="false" onAction="#onActionCancelProd" text="Cancel" />
-      <Button fx:id="saveProductBtn" layoutX="630.0" layoutY="561.0" mnemonicParsing="false" text="Save" />
-      <Button fx:id="removeAssocPartBtn" layoutX="630.0" layoutY="529.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Remove Associated Part" />
+      <Button fx:id="saveProductBtn" layoutX="630.0" layoutY="561.0" mnemonicParsing="false" onAction="#onActionSaveAssoProd" text="Save" />
+      <Button fx:id="removeAssocPartBtn" layoutX="630.0" layoutY="529.0" mnemonicParsing="false" onAction="#onActionRemoveAsso" prefHeight="25.0" prefWidth="149.0" text="Remove Associated Part" />
    </children>
 </AnchorPane>
