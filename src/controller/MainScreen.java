@@ -102,7 +102,6 @@ public class MainScreen implements Initializable {
         scene = FXMLLoader.load(getClass().getResource("/view/AddPart.fxml"));
 
         stage.setScene(new Scene(scene));
-
         stage.show();
 
     }

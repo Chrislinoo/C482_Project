@@ -17,12 +17,14 @@ import model.Product;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 /**
  * This class is responsible for adding products and is the controller for the "AddProduct.fxml" file
  */
 public class AddProduct implements Initializable {
+     Random rnd = new Random();
 
      Stage stage;
      Parent scene;
@@ -164,7 +166,7 @@ public class AddProduct implements Initializable {
      @FXML
      void onActionSaveAssoProd(ActionEvent event) throws IOException {
           try{
-               int id = Integer.parseInt(textFieldID.getText());
+               int id = rnd.nextInt(1000);
                String name = textFieldName.getText();
                int stock = Integer.parseInt(textFieldInv.getText());
                double price = Double.parseDouble(textFieldPrice.getText());

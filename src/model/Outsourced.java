@@ -1,9 +1,12 @@
 package model;
 
+import java.util.Random;
+
 /**
  * Hold the methods for outsourced parts and is a subclass of "Part"
  */
 public class Outsourced extends Part {
+    Random rnd = new Random();
 
     private String companyName;
 
@@ -19,6 +22,7 @@ public class Outsourced extends Part {
      */
     public Outsourced(int id, String name, double price, int stock, int min, int max, String companyName) {
         super(id, name, price, stock, min, max);
+        this.setId(rnd.nextInt(1000));
         this.companyName = companyName;
     }
 

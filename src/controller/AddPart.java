@@ -133,10 +133,10 @@ public class AddPart {
     @FXML
     void onActionSavePartBtn(ActionEvent event) throws IOException {
         try {
-            int id = Integer.parseInt(this.idTxtField.getText());
+            int id = rnd.nextInt(1000);
             String name = this.nameTxtField.getText();
             double price = Double.parseDouble(this.priceTxtField.getText());
-            int stock = Integer.parseInt(this.priceTxtField.getText());
+            int stock = Integer.parseInt(this.invTxtField.getText());
             int min = Integer.parseInt(this.minTxtField.getText());
             int max = Integer.parseInt(this.maxTxtField.getText());
 
@@ -148,7 +148,15 @@ public class AddPart {
                 Alert alert = new Alert(Alert.AlertType.ERROR, "Inventory should be less than max and greater than min.");
                 alert.showAndWait();
                 return;
+            } else if (!outSourcedRadio.isSelected() && !inHouseRadio.isSelected()) {
+                Alert alert = new Alert(Alert.AlertType.ERROR, "You smell.");
+                alert.setTitle("Error");
+                alert.setContentText("Select In-house or Outsourced");
+                alert.showAndWait();
+                return;
             }
+
+
 
 
             if (inHouseRadio.isSelected()) {
@@ -160,6 +168,7 @@ public class AddPart {
                 String hybrid2 = this.hybridTxtField.getText();
                 Inventory.addPart(new Outsourced(id, name, price, stock, min, max, hybrid2));
             }
+
 
 
             stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
@@ -181,6 +190,9 @@ public class AddPart {
 
 
     }
+
+    public void initialize(URL url, ResourceBundle resourceBundle){
+        this.idTxtField.setText(String.valueOf(rnd.nextInt(1000)));    }
 
 
 

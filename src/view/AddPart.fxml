@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddPart">
+<AnchorPane prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddPart">
    <children>
       <Label fx:id="addPartLbl" layoutX="57.0" layoutY="69.0" text="Add Part :">
          <font>
@@ -16,7 +20,7 @@
             <ToggleGroup fx:id="inOrOutsourced" />
          </toggleGroup></RadioButton>
       <RadioButton fx:id="outSourcedRadio" layoutX="250.0" layoutY="69.0" mnemonicParsing="false" onAction="#outSourcedRadioBtn" text="Outsourced" toggleGroup="$inOrOutsourced" />
-      <TextField fx:id="idTxtField" layoutX="107.0" layoutY="125.0" />
+      <TextField fx:id="idTxtField" editable="false" layoutX="107.0" layoutY="125.0" text="Auto Gen - Disabled" />
       <TextField fx:id="nameTxtField" layoutX="107.0" layoutY="165.0" />
       <TextField fx:id="invTxtField" layoutX="107.0" layoutY="205.0" />
       <TextField fx:id="priceTxtField" layoutX="107.0" layoutY="245.0" />
