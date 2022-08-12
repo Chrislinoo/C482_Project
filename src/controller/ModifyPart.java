@@ -15,6 +15,9 @@ import model.Part;
 
 import java.io.IOException;
 
+/**
+ * This class is responsible for modifying parts and is the controller for the "ModifyPart.fxml" file
+ */
 public class ModifyPart {
 
     Stage stage;
@@ -85,7 +88,11 @@ public class ModifyPart {
     private TextField priceTxtField;
 
 
-
+    /**
+     * Returns the user to the main menu screen
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void onActionCancelPart(ActionEvent event) throws IOException {
 
@@ -98,6 +105,10 @@ public class ModifyPart {
         stage.show();
     }
 
+    /**
+     * If radio button "In-House" is selected, it sets the hybrid text field to "Machine ID".
+     * @param event
+     */
     @FXML
     void onActionInHouseBtn(ActionEvent event) {
 
@@ -108,6 +119,12 @@ public class ModifyPart {
 
     }
 
+    /**
+     * Grabs information of a selected partfrom the main menu and determines whether it is in house or outsourced to get the appropriate information.
+     *Then that information is brought to the modify part screen so that it can be edited.
+     * @param index
+     * @param part
+     */
     public void partTransfer(int index, Part part){
          selectedPart = part;
          selectedIndex = index;
@@ -121,6 +138,7 @@ public class ModifyPart {
             this.idTxtField.setText(String.valueOf(renew.getId()));
             this.nameTxtField.setText(renew.getName());
             this.invTxtField.setText(String.valueOf(renew.getStock()));
+            this.priceTxtField.setText(String.valueOf(renew.getPrice()));
             this.minTxtField.setText(String.valueOf(renew.getMin()));
             this.maxTxtField.setText(String.valueOf(renew.getMax()));
             this.hybridTxtField.setText(String.valueOf(renew.getMachineId()));
@@ -133,11 +151,12 @@ public class ModifyPart {
         if (part instanceof Outsourced){
 
             Outsourced renew = (Outsourced) part;
-            inHouseRadioBtn.setSelected(true);
-            hybridLbl.setText("Machine ID");
+            outSourcedRadioBtn.setSelected(true);
+            hybridLbl.setText("Company Name");
             this.idTxtField.setText(String.valueOf(renew.getId()));
             this.nameTxtField.setText(renew.getName());
             this.invTxtField.setText(String.valueOf(renew.getStock()));
+            this.priceTxtField.setText(String.valueOf(renew.getPrice()));
             this.minTxtField.setText(String.valueOf(renew.getMin()));
             this.maxTxtField.setText(String.valueOf(renew.getMax()));
             this.hybridTxtField.setText(renew.getCompanyName());
@@ -146,11 +165,12 @@ public class ModifyPart {
     }
 
 
-
-
-
-
-
+    /**
+     * Updates the part that was selected to be edited with the newly introduced field values.
+     * Throws an error if some values need to be re evaluated to make sense. Lastly it redirects the user to the main menu
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void onActionModPartSave(ActionEvent event) throws IOException {
 
@@ -166,11 +186,11 @@ public class ModifyPart {
 
 
             if (min > max){
-                Alert alert = new Alert(Alert.AlertType.ERROR, "Max must be greater than min!");
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Max must be greater than min.");
                 alert.showAndWait();
                 return;
             } else if (inventory < min || max < inventory) {
-                Alert alert = new Alert(Alert.AlertType.ERROR, "Inventory should be less than max & greater than min.");
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Inventory should be less than max and greater than min.");
                 alert.showAndWait();
                 return;
             }
@@ -206,7 +226,10 @@ public class ModifyPart {
 
     }
 
-
+    /**
+     * If radio button "Outsourced" is selected, it sets the hybrid text field to "Company Name".
+     * @param event
+     */
     @FXML
     void onActionOutSourcedBtn(ActionEvent event) {
 

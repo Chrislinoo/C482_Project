@@ -9,10 +9,17 @@
       <change beforePath="$PROJECT_DIR$/src/controller/AddPart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AddPart.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/AddProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AddProduct.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/MainScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/MainScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ModifyPart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ModifyPart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ModifyProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ModifyProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/InHouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/InHouse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Outsourced.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Outsourced.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Part.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Part.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/AddProduct.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/AddProduct.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/MainScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MainScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ModifyPart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ModifyPart.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ModifyProduct.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ModifyProduct.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +122,12 @@
       <workItem from="1659812083670" duration="17568000" />
       <workItem from="1659832388673" duration="202000" />
       <workItem from="1659844742408" duration="4663000" />
-      <workItem from="1659904313785" duration="13936000" />
+      <workItem from="1659904313785" duration="14143000" />
+      <workItem from="1660062463445" duration="14080000" />
+      <workItem from="1660094033444" duration="96000" />
+      <workItem from="1660165988410" duration="5124000" />
+      <workItem from="1660251078946" duration="7084000" />
+      <workItem from="1660333615152" duration="2812000" />
     </task>
     <task id="LOCAL-00001" summary="Been working on this for a minute but having trouble with the save button.">
       <created>1659817798427</created>
@@ -159,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659831937201</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="ISSUES:&#10;-Now that my modify button works I cannot get the alerts to show up if I dont select a part.&#10;&#10;&#10;RESOLVED/ACCOMPLISHED:&#10;-Got the alert for deleting without setting a part pop up.&#10;-Got the modifying input values alerts working.">
+      <created>1659919653160</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1659919653160</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

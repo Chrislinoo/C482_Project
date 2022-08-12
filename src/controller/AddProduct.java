@@ -19,12 +19,15 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * This class is responsible for adding products and is the controller for the "AddProduct.fxml" file
+ */
 public class AddProduct implements Initializable {
 
      Stage stage;
      Parent scene;
 
-     private ObservableList<Part> associatedPartList = FXCollections.observableArrayList();
+     private ObservableList<Part> associatedParts = FXCollections.observableArrayList();
 
      @FXML
      private TableColumn<Part, String> bottomCol2;
@@ -107,24 +110,36 @@ public class AddProduct implements Initializable {
      @FXML
      private TableColumn<Part, Double> topCol4;
 
+     /**
+      * Uses the variable 'selectedPart' and assigns the part selected in the parts table view and then attaches to the Product.
+      * If no part is selected, it throws a warning.
+      * The selected Part then appears in the associated parts table.
+      * @param event
+      */
      @FXML
-     void onActionAddPartBtn(ActionEvent event){       //WORKS!!!!
+     void onActionAddPartBtn(ActionEvent event){
           Part selectedPart = tableViewPart.getSelectionModel().getSelectedItem();
+
           if (selectedPart == null){
                Alert alert = new Alert(Alert.AlertType.WARNING);
                alert.setTitle("Error");
                alert.setContentText("Select Part First");
                alert.showAndWait();
                return;
-          } else if (!associatedPartList.contains(selectedPart)) {
-               associatedPartList.add(selectedPart);
-               tableViewAssoPart.setItems(associatedPartList);
+          } else if (!associatedParts.contains(selectedPart)) {
+               associatedParts.add(selectedPart);
+               tableViewAssoPart.setItems(associatedParts);
 
           }
      }
 
+     /**
+      * Removes the selected part from the associated parts table.
+      * If no part is selected, it throws a warning.
+      * @param event
+      */
      @FXML
-     void onActionRemoveAsso(ActionEvent event){       //WORKS!!
+     void onActionRemoveAsso(ActionEvent event){
           Part selectedPart = tableViewAssoPart.getSelectionModel().getSelectedItem();
           if (selectedPart == null){
                Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -132,15 +147,22 @@ public class AddProduct implements Initializable {
                alert.setContentText("Select Part First");
                alert.showAndWait();
                return;
-          } else if (associatedPartList.contains(selectedPart)) {
-               associatedPartList.remove(selectedPart);
-               tableViewAssoPart.setItems(associatedPartList);
+          } else if (associatedParts.contains(selectedPart)) {
+               associatedParts.remove(selectedPart);
+               tableViewAssoPart.setItems(associatedParts);
 
           }
      }
 
+     /**
+      * On action , saves the information added into the text fields to create a new Product and along with any associated parts attached.
+      * Throws an error screen if any text field is blank or has any incorrect values.
+      * Then redirects the user to the main screen.
+      * @param event
+      * @throws IOException
+      */
      @FXML
-     void onActionSaveAssoProd(ActionEvent event) throws IOException {     //Not Working!!!
+     void onActionSaveAssoProd(ActionEvent event) throws IOException {
           try{
                int id = Integer.parseInt(textFieldID.getText());
                String name = textFieldName.getText();
@@ -151,19 +173,17 @@ public class AddProduct implements Initializable {
 
 
                if (min > max){
-                    Alert alert = new Alert(Alert.AlertType.ERROR, "Max must be greater than min!");
+                    Alert alert = new Alert(Alert.AlertType.ERROR, "Max must be greater than min.");
                     alert.showAndWait();
-                    return;
                } else if (stock < min || max < stock) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR, "Inventory should be less than max & greater than min.");
+                    Alert alert = new Alert(Alert.AlertType.ERROR, "Inventory should be less than max and greater than min.");
                     alert.showAndWait();
-                    return;
                }
 
                Product product = new Product(id, name, price, stock, min, max);
 
-               for (Part part: associatedPartList){
-                    if (part != associatedPartList){
+               for (Part part: associatedParts){
+                    if (part != associatedParts){
                          product.addAssociatedPart(part);
                     }
                }
@@ -183,7 +203,7 @@ public class AddProduct implements Initializable {
           catch (NumberFormatException e){
                Alert alert = new Alert(Alert.AlertType.WARNING);
                alert.setTitle("Error");
-               alert.setContentText("Check Input");
+               alert.setContentText("Check Input.");
                alert.showAndWait();
                return;
           }
@@ -191,9 +211,14 @@ public class AddProduct implements Initializable {
      }
 
 
-
+     /**
+      * Initializes and populates all four columns of the table.
+      * Allows for data to be placed inside the associated table view when data is added.
+      * @param url
+      * @param resourceBundle
+      */
      @Override
-     public void initialize(URL url, ResourceBundle resourceBundle){  //Not Working!!!
+     public void initialize(URL url, ResourceBundle resourceBundle){
           tableViewPart.setItems(Inventory.getAllParts());
 
           topCol1.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -201,14 +226,19 @@ public class AddProduct implements Initializable {
           topCol3.setCellValueFactory(new PropertyValueFactory<>("stock"));
           topCol4.setCellValueFactory(new PropertyValueFactory<>("price"));
 
-          tableViewAssoPart.setItems(associatedPartList);
+          tableViewAssoPart.setItems(associatedParts);
 
           bottomCol1.setCellValueFactory(new PropertyValueFactory<>("id"));
           bottomCol2.setCellValueFactory(new PropertyValueFactory<>("name"));
           bottomCol3.setCellValueFactory(new PropertyValueFactory<>("stock"));
-          //bottomCol4.setCellValueFactory(new PropertyValueFactory<>("price"));
+          bottomCol4.setCellValueFactory(new PropertyValueFactory<>("price"));
      }
 
+     /**
+      * Upon "Cancel" button click, redirects user to the main screen.
+      * @param event
+      * @throws IOException
+      */
      @FXML
      void onActionCancelProd(ActionEvent event) throws IOException {
           stage = (Stage) ((Button)event.getSource()).getScene().getWindow();
@@ -220,8 +250,13 @@ public class AddProduct implements Initializable {
           stage.show();
      }
 
+     /**
+      * Filters the parts' table to look for desired part by ID or name (full or partial).
+      * If input does not satisfy search conditions it throws up an error code.
+      * @param event
+      */
      @FXML
-     void onActionSearchTxtField (ActionEvent event){//Not Searching Up by ID
+     void onActionSearchTxtField (ActionEvent event){
           String textSearch = searchTextField.getText();
           ObservableList<Part> outcome = Inventory.lookupPart(textSearch);
 

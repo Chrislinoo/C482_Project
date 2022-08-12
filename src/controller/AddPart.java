@@ -13,9 +13,14 @@ import model.Outsourced;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Random;
 import java.util.ResourceBundle;
 
+/**
+ * This class is the controller for the "AddPart.fxml" file and is responsible for adding parts
+ */
 public class AddPart {
+    Random rnd = new Random();
 
     Stage stage;
     Parent scene;
@@ -81,7 +86,11 @@ public class AddPart {
     @FXML
     private Button savePartBtn;
 
-
+    /**
+     * Upon "Cancel" button click , redirects user to the Main screen.
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void onActionCancelPart(ActionEvent event) throws IOException {
         stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
@@ -93,6 +102,10 @@ public class AddPart {
         stage.show();
     }
 
+    /**
+     * If the In-House radio button is toggled , changes the corresponding text field to "Machine ID".
+     * @param event
+     */
     public void inHouseRadioBtn(ActionEvent event) {
         if (inHouseRadio.isSelected()) {
             hybridLbl.setText("Machine ID");
@@ -100,12 +113,23 @@ public class AddPart {
         }
     }
 
+    /**
+     * If the Outsourced radio button is toggled , changes the corresponding text field to "Company Name".
+     * @param event
+     */
     public void outSourcedRadioBtn(ActionEvent event) {
         if (outSourcedRadio.isSelected()) {
             hybridLbl.setText("Company Name");
         }
     }
 
+    /**
+     * Looks for the sought after values in each text field when adding a new part as well as looks for certain exceptions that may trigger and error code.
+     * Adjusts the constructor and data to be received depending on which radio button is selected.
+     * After the save is complete it redirects the user to the main screen.
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void onActionSavePartBtn(ActionEvent event) throws IOException {
         try {
@@ -117,11 +141,11 @@ public class AddPart {
             int max = Integer.parseInt(this.maxTxtField.getText());
 
             if (min > max){
-                Alert alert = new Alert(Alert.AlertType.ERROR, "Max must be greater than min!");
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Max must be greater than min.");
                 alert.showAndWait();
                 return;
             } else if (stock < min || max < stock) {
-                Alert alert = new Alert(Alert.AlertType.ERROR, "Inventory should be less than max & greater than min.");
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Inventory should be less than max and greater than min.");
                 alert.showAndWait();
                 return;
             }
