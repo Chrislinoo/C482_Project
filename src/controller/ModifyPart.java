@@ -26,7 +26,6 @@ public class ModifyPart {
     Part selectedPart;
     int selectedIndex;
 
-
     @FXML
     private Button cancelPartBtn;
 

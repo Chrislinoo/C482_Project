@@ -169,7 +169,7 @@ public class ModifyProduct implements Initializable {
         ObservableList<Part> outcome = Inventory.lookupPart(textSearch);
         try {
             while (outcome.size() == 0){
-                int partId = Integer.parseInt(textSearch);
+                int partId = Integer.parseInt(String.valueOf(outcome));
                 outcome.add(Inventory.lookupPart(partId));
             }
             modProdTopTable.setItems(outcome);

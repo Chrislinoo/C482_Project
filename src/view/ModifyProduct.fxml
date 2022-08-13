@@ -45,7 +45,7 @@
             <children>
                 <Label fx:id="modProdIDLabel" text="ID" />
                 <Label fx:id="modProdNameLabel" text="Name" GridPane.rowIndex="1" />
-                <TextField fx:id="modProdIDTF" GridPane.columnIndex="1" />
+                <TextField fx:id="modProdIDTF" editable="false" promptText="Auto Gen - Disabled" GridPane.columnIndex="1" />
                 <TextField fx:id="modProdNameTF" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             </children>
         </GridPane>

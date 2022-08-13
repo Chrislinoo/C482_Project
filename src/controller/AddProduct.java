@@ -177,9 +177,11 @@ public class AddProduct implements Initializable {
                if (min > max){
                     Alert alert = new Alert(Alert.AlertType.ERROR, "Max must be greater than min.");
                     alert.showAndWait();
+                    return;
                } else if (stock < min || max < stock) {
                     Alert alert = new Alert(Alert.AlertType.ERROR, "Inventory should be less than max and greater than min.");
                     alert.showAndWait();
+                    return;
                }
 
                Product product = new Product(id, name, price, stock, min, max);
@@ -276,6 +278,8 @@ public class AddProduct implements Initializable {
                alert.showAndWait();
           }
      }
+
+
 
 
 }

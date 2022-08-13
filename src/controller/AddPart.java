@@ -149,7 +149,7 @@ public class AddPart {
                 alert.showAndWait();
                 return;
             } else if (!outSourcedRadio.isSelected() && !inHouseRadio.isSelected()) {
-                Alert alert = new Alert(Alert.AlertType.ERROR, "You smell.");
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Error");
                 alert.setTitle("Error");
                 alert.setContentText("Select In-house or Outsourced");
                 alert.showAndWait();

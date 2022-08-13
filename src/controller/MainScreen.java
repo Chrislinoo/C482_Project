@@ -150,7 +150,7 @@ public class MainScreen implements Initializable {
      * @throws IOException
      */
     @FXML
-    void onActionModifyPart(ActionEvent event) throws IOException {//Doesnt show Alert!!!
+    void onActionModifyPart(ActionEvent event) throws IOException {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("/view/ModifyPart.fxml"));
@@ -280,7 +280,7 @@ public class MainScreen implements Initializable {
         catch (NullPointerException e){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
-            alert.setContentText("Clear Associated Parts Before Deleting Desired Product.");
+            alert.setContentText("Select a product first.");
             alert.showAndWait();
         }
     }
@@ -296,7 +296,7 @@ public class MainScreen implements Initializable {
 
         try {
             while(output.size() == 0 ){
-                int partId = Integer.parseInt(textSearch);
+                int partId = Integer.parseInt(String.valueOf(output));
                 output.add(Inventory.lookupPart(partId));
             }
             partsTableView.setItems(output);
@@ -321,7 +321,7 @@ public class MainScreen implements Initializable {
 
         try {
             while(outcome.size() == 0){
-                int productId = Integer.parseInt(productSearch);
+                int productId = Integer.parseInt(String.valueOf(outcome));
                 outcome.add(Inventory.lookupProduct(productId));
             }
             productsTableView.setItems(outcome);
