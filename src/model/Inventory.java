@@ -102,16 +102,8 @@ public class Inventory {
                 PartName.add(part);
             }
 
-            //TODO: Fix this, it won't add a number
-            if(!partName.equals("") && part.getId() == Integer.parseInt(partName)) {
+            if(!partName.equals("") && Integer.toString(part.getId()).contains(partName)) {
                 PartName.add(part);
-            }
-            //try/catch exists to check if the string is even a number
-            try{
-                if(!partName.equals("") && part.getId() == Integer.parseInt(partName)) {
-                    PartName.add(part);
-                }
-            } catch (NumberFormatException e) {
             }
 
         }
@@ -130,7 +122,7 @@ public class Inventory {
                 ProductName.add(product);
             }
 
-            if(!productName.equals("") && product.getId() == Integer.parseInt(productName)){
+            if(!productName.equals("") && Integer.toString(product.getId()).contains(productName)) {
                 ProductName.add(product);
             }
         }

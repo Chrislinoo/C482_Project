@@ -129,6 +129,10 @@ public class ModifyPart {
          selectedPart = part;
          selectedIndex = index;
 
+         //This is here to invoke the catch exception in the event that
+        //the part object is null. getId is a function in both objects so it's a safe
+        //key to call.
+        this.idTxtField.setText(String.valueOf(part.getId()));
 
         if (part instanceof InHouse){
 

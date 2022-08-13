@@ -3,10 +3,14 @@ package model;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.util.Random;
+
 /**
  * This class holds the methods for Product and depends on the Abstract Part class
  */
 public class Product {
+
+    Random rnd = new Random();
 
     //Fields
     private ObservableList<Part> associatedParts = FXCollections.observableArrayList();
@@ -27,7 +31,7 @@ public class Product {
      * @param max
      */
     public Product(int id, String name, double price, int stock, int min, int max) {
-        this.id = id;
+        this.id = rnd.nextInt(1000);
         this.name = name;
         this.price = price;
         this.stock = stock;

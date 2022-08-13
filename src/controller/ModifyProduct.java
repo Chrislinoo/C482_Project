@@ -234,7 +234,7 @@ public class ModifyProduct implements Initializable {
             int id = Integer.parseInt(modProdIDTF.getText());
             String name = modProdNameTF.getText();
             int stock = Integer.parseInt(modProdInvTF.getText());
-            double price = Integer.parseInt(modProdPriceTF.getText());
+            double price = Double.parseDouble(modProdPriceTF.getText());
             int max = Integer.parseInt(modProdMaxTF.getText());
             int min = Integer.parseInt(modProdMinTF.getText());
 
