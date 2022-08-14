@@ -6,7 +6,6 @@ import java.util.Random;
  * Hold the methods for outsourced parts and is a subclass of "Part"
  */
 public class Outsourced extends Part {
-    Random rnd = new Random();
 
     private String companyName;
 

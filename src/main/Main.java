@@ -25,7 +25,8 @@ public class Main extends Application {
     }
 
     /**
-     * Loads test data to populate the tables in the main menu and launches the program
+     * Loads test data to populate the tables in the main menu and launches the program.
+     * FUTURE ENHANCEMENT: It would be great if in a future update we could link a database to keep track of all parts and products to maintain recorded history of all that was added.
      * @param args
      */
     public static void main(String[] args){

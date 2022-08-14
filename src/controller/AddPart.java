@@ -103,7 +103,7 @@ public class AddPart {
     }
 
     /**
-     * If the In-House radio button is toggled , changes the corresponding text field to "Machine ID".
+     * In-House Radio toggle effect. If the In-House radio button is toggled , changes the corresponding text field to "Machine ID".
      * @param event
      */
     public void inHouseRadioBtn(ActionEvent event) {
@@ -114,7 +114,7 @@ public class AddPart {
     }
 
     /**
-     * If the Outsourced radio button is toggled , changes the corresponding text field to "Company Name".
+     * Outsourced Radio toggle effect. If the Outsourced radio button is toggled , changes the corresponding text field to "Company Name".
      * @param event
      */
     public void outSourcedRadioBtn(ActionEvent event) {
@@ -124,7 +124,7 @@ public class AddPart {
     }
 
     /**
-     * Looks for the sought after values in each text field when adding a new part as well as looks for certain exceptions that may trigger and error code.
+     * Saves Part. Looks for the sought after values in each text field when adding a new part as well as looks for certain exceptions that may trigger and error code.
      * Adjusts the constructor and data to be received depending on which radio button is selected.
      * After the save is complete it redirects the user to the main screen.
      * @param event
@@ -151,7 +151,7 @@ public class AddPart {
             } else if (!outSourcedRadio.isSelected() && !inHouseRadio.isSelected()) {
                 Alert alert = new Alert(Alert.AlertType.ERROR, "Error");
                 alert.setTitle("Error");
-                alert.setContentText("Select In-house or Outsourced");
+                alert.setContentText("Select In-house or Outsourced.");
                 alert.showAndWait();
                 return;
             }
@@ -190,10 +190,5 @@ public class AddPart {
 
 
     }
-
-    public void initialize(URL url, ResourceBundle resourceBundle){
-        this.idTxtField.setText(String.valueOf(rnd.nextInt(1000)));    }
-
-
 
 }

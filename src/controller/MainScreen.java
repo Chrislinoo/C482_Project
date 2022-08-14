@@ -217,8 +217,8 @@ public class MainScreen implements Initializable {
         }
         catch (NullPointerException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error!");
-            alert.setContentText("Make a product selection first");
+            alert.setTitle("Error");
+            alert.setContentText("Make a product selection first.");
             alert.show();
         }
     }
@@ -286,8 +286,8 @@ public class MainScreen implements Initializable {
     }
 
     /**
-     * Table data filter. Searches for the input typed into the part search box.
-     * Can be filtered through ID or name (full or partial). Throws an error if no part is found.
+     * Table data filter. Searches for the input typed into the part search box. Can be filtered through ID or name (full or partial). Throws an error if no part is found.
+     * FUTURE ENHANCEMENT: Would be better in a quality of life sense to be able to search for parts and not have to be case-sensitive when using the search box.
      * @param event
      */
     public void onActionMSPartSearch(ActionEvent event) {
@@ -311,8 +311,8 @@ public class MainScreen implements Initializable {
 
 
     /**
-     * Table data filter. Searches for the input typed into the product search box.
-     * Can be filtered through ID or name (full or partial). Throws an error if no part is found.
+     * Table data filter. Searches for the input typed into the product search box. Can be filtered through ID or name (full or partial). Throws an error if no part is found.
+     * FUTURE ENHANCEMENT: Would be better in a quality of life sense to be able to search for parts and not have to be case-sensitive when using the search box.
      * @param event
      */
     public void onActionMSProductSearch(ActionEvent event) {

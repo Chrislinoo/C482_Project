@@ -119,8 +119,10 @@ public class ModifyPart {
     }
 
     /**
-     * Grabs information of a selected partfrom the main menu and determines whether it is in house or outsourced to get the appropriate information.
+     * Grabs information of a selected part from the main menu and determines whether it is in house or outsourced to get the appropriate information.
      *Then that information is brought to the modify part screen so that it can be edited.
+     * RUNTIME ERROR: The method was skipping the catch exception from the main screen when clicking on modify product without selecting a part first.
+     * SOLUTION: Took the getId function outside of both if statements to invoke the catch exception in the event that the part object is null.
      * @param index
      * @param part
      */
@@ -129,7 +131,7 @@ public class ModifyPart {
          selectedIndex = index;
 
          //This is here to invoke the catch exception in the event that
-        //the part object is null. getId is a function in both objects so it's a safe
+        //the part object is null. getId is a function in both objects, so it's a safe
         //key to call.
         this.idTxtField.setText(String.valueOf(part.getId()));
 

@@ -20,7 +20,7 @@
             <ToggleGroup fx:id="inOrOutsourced" />
          </toggleGroup></RadioButton>
       <RadioButton fx:id="outSourcedRadio" layoutX="250.0" layoutY="69.0" mnemonicParsing="false" onAction="#outSourcedRadioBtn" text="Outsourced" toggleGroup="$inOrOutsourced" />
-      <TextField fx:id="idTxtField" editable="false" layoutX="107.0" layoutY="125.0" text="Auto Gen - Disabled" />
+      <TextField fx:id="idTxtField" editable="false" layoutX="107.0" layoutY="125.0" opacity="0.5" text="Auto Gen - Disabled" />
       <TextField fx:id="nameTxtField" layoutX="107.0" layoutY="165.0" />
       <TextField fx:id="invTxtField" layoutX="107.0" layoutY="205.0" />
       <TextField fx:id="priceTxtField" layoutX="107.0" layoutY="245.0" />

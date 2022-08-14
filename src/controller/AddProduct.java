@@ -113,7 +113,7 @@ public class AddProduct implements Initializable {
      private TableColumn<Part, Double> topCol4;
 
      /**
-      * Uses the variable 'selectedPart' and assigns the part selected in the parts table view and then attaches to the Product.
+      * Adds a Part to the associated parts table. Uses the variable 'selectedPart' and assigns the part selected in the parts table view and then attaches to the Product.
       * If no part is selected, it throws a warning.
       * The selected Part then appears in the associated parts table.
       * @param event
@@ -157,7 +157,7 @@ public class AddProduct implements Initializable {
      }
 
      /**
-      * On action , saves the information added into the text fields to create a new Product and along with any associated parts attached.
+      * Saves associated parts to a product. On action , saves the information added into the text fields to create a new Product and along with any associated parts attached.
       * Throws an error screen if any text field is blank or has any incorrect values.
       * Then redirects the user to the main screen.
       * @param event
@@ -216,8 +216,11 @@ public class AddProduct implements Initializable {
 
 
      /**
-      * Initializes and populates all four columns of the table.
-      * Allows for data to be placed inside the associated table view when data is added.
+      * Initializes and populates all four columns of the table. Allows for data to be placed inside the associated table view when data is added.
+      * RUNTIME ERROR: The command to set value into the cell "bottomCol4.setCellValueFactory(new PropertyValueFactory<>("price"));" was not working correctly. The application would not
+      * start since it was returning a NULL value and could not initialize.
+      * Solution: The solution was very simple but took me a few hours to notice. I had to restart the build up of the .fxml file that controlled the associated parts table
+      * and re-name the columns so that I wouldn't get mixed up. After doing this it worked, so I am assuming the NULL that was returned was due to a misspelling or something like that.
       * @param url
       * @param resourceBundle
       */
@@ -278,9 +281,6 @@ public class AddProduct implements Initializable {
                alert.showAndWait();
           }
      }
-
-
-
 
 }
 

@@ -5,7 +5,6 @@ import java.util.Random;
  * Hold the methods for inhouse parts and is a subclass of "Part"
  */
 public class InHouse extends Part {
-    Random rnd = new Random();
 
 
     private int machineId;
